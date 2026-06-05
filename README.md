@@ -39,6 +39,15 @@
 - ⚡ **高性能**：C3P0 连接池 + DbUtils 简化数据库操作
 
 ---
+# 项目演示图片
+商城首页：
+![演示1-商城首页](ProjectPresentation/1.png)
+全部商品：
+![演示2-全部商品](ProjectPresentation/2.png)
+订单流程：
+![演示3-订单流程](ProjectPresentation/3.png)
+后台管理：
+![演示4-后台管理](ProjectPresentation/4.png)
 
 ## 核心功能
 
