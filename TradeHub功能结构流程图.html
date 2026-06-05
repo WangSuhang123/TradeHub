@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeHub 校园二手交易平台 - 功能结构流程图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  body {
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0 10px;
+  }
+  .header h1 {
+    font-size: 28px;
+    color: #FF5000;
+    margin: 0 0 6px;
+  }
+  .header p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  .chart-section {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+    padding: 24px;
+    overflow-x: auto;
+  }
+  .chart-section h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 0 0 16px;
+    padding-left: 12px;
+    border-left: 4px solid #FF5000;
+  }
+  .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+  .legend {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #555;
+  }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>TradeHub 校园二手交易平台</h1>
+    <p>网站功能结构流程图</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#FF5000;"></div> 前台用户系统</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1890ff;"></div> 后台管理系统</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#52c41a;"></div> 共享基础设施</div>
+  </div>
+
+  <!-- ================== 整体架构总览 ================== -->
+  <div class="chart-section">
+    <h2>一、系统整体架构总览</h2>
+    <div class="mermaid">
+graph TB
+    subgraph INFRA["🖥️ 基础设施层"]
+        DB[("🗄️ MySQL 数据库<br/>tradehub")]
+        TOMCAT["🚀 Apache Tomcat 8.5<br/>Web 服务器"]
+    end
+
+    subgraph FILTER["🔒 过滤器层"]
+        ENCODE["EncodeFilter<br/>字符编码过滤器"]
+        ADMIN_FILTER["AdminFilter<br/>管理员权限过滤器"]
+    end
+
+    subgraph BACKEND["🔧 后台管理系统 (Admin)"]
+        direction TB
+        A1["管理员登录"]
+        A2["📊 管理仪表盘"]
+        A3["👥 用户管理"]
+        A4["📦 商品管理"]
+        A5["📂 分类管理"]
+        A6["🎠 轮播图管理"]
+        A7["🛡️ 权限控制"]
+    end
+
+    subgraph FRONTEND["🏠 前台用户系统 (User)"]
+        direction TB
+        F1["👤 用户模块"]
+        F2["🏠 首页展示"]
+        F3["📋 商品浏览"]
+        F4["🔍 搜索功能"]
+        F5["🛒 购物车"]
+        F6["📝 订单系统"]
+        F7["❤️ 个人中心"]
+    end
+
+    TOMCAT --> ENCODE
+    ENCODE --> FRONTEND
+    ENCODE --> BACKEND
+    FRONTEND --> DB
+    BACKEND --> DB
+    BACKEND --> ADMIN_FILTER
+    ADMIN_FILTER --> BACKEND
+
+    style FRONTEND fill:#fff7f0,stroke:#FF5000,stroke-width:3px
+    style BACKEND fill:#f0f7ff,stroke:#1890ff,stroke-width:3px
+    style INFRA fill:#f6ffed,stroke:#52c41a,stroke-width:3px
+    style FILTER fill:#fffbe6,stroke:#faad14,stroke-width:2px
+    </div>
+  </div>
+
+  <!-- ================== 前台用户系统详细流程图 ================== -->
+  <div class="chart-section">
+    <h2>二、前台用户系统 - 详细功能结构</h2>
+    <div class="mermaid">
+graph TB
+    START_USER["👤 用户访问<br/>TradeHub 首页"]
+
+    subgraph USER_MODULE["👤 用户模块"]
+        U_REG["用户注册<br/>填写学号/姓名/密码/手机/学校等"]
+        U_LOGIN["用户登录<br/>学号+密码验证"]
+        U_LOGOUT["退出登录<br/>清除Session会话"]
+        U_PROFILE["个人信息管理<br/>修改资料/地址/联系方式"]
+        U_PWD["修改密码<br/>验证原密码→设置新密码"]
+    end
+
+    subgraph HOME["🏠 首页展示"]
+        H_CAROUSEL["轮播广告<br/>自动轮播/手动切换"]
+        H_CATEGORY["分类导航<br/>快速筛选商品分类"]
+        H_LATEST["最新发布<br/>显示最新12件商品"]
+        H_HOT["热门推荐<br/>浏览量排行TOP10"]
+        H_NAV["全局导航栏<br/>搜索框/购物车/用户菜单"]
+    end
+
+    subgraph BROWSE["📋 商品浏览"]
+        B_LIST["商品列表<br/>分页展示/分类筛选/排序"]
+        B_DETAIL["商品详情<br/>图文信息/成色/卖家信息"]
+        B_SORT["多维度排序<br/>最新/价格升序/价格降序"]
+    end
+
+    subgraph SEARCH["🔍 搜索功能"]
+        S_KEYWORD["关键词搜索<br/>模糊匹配商品名称"]
+        S_FILTER["高级筛选<br/>分类+价格区间+排序"]
+        S_RESULT["搜索结果<br/>分页展示匹配商品"]
+    end
+
+    subgraph CART["🛒 购物车"]
+        C_ADD["加入购物车<br/>AJAX异步请求"]
+        C_LIST["购物车列表<br/>商品/数量/小计"]
+        C_UPDATE["修改数量<br/>增减/限制1-99"]
+        C_DELETE["删除商品<br/>单选/批量删除"]
+        C_CHECKOUT["批量结算<br/>勾选商品→提交订单"]
+    end
+
+    subgraph ORDER["📝 订单系统"]
+        O_SUBMIT["提交订单<br/>确认联系人/地址/留言"]
+        O_BUYER["买家订单<br/>我购买的订单列表"]
+        O_SELLER["卖家订单<br/>我出售的订单列表"]
+        O_PAY["付款操作<br/>待付款→已付款"]
+        O_SHIP["发货操作<br/>已付款→已发货"]
+        O_CONFIRM["确认收货<br/>已发货→已完成"]
+        O_CANCEL["取消订单<br/>待付款→已取消"]
+        O_FLOW["订单状态流转<br/>待付款→已付款→已发货→已完成"]
+    end
+
+    subgraph CENTER["❤️ 个人中心"]
+        PC_PRODUCTS["我的商品<br/>已发布商品管理/分页"]
+        PC_FAVORITES["我的收藏<br/>收藏商品列表"]
+        PC_ORDERS["我的订单<br/>买家/卖家双视图"]
+        PC_SETTINGS["个人设置<br/>修改资料/密码"]
+        PC_PUBLISH["发布商品<br/>填写信息+上传图片"]
+        PC_EDIT["编辑/删除商品<br/>仅限本人商品"]
+    end
+
+    START_USER --> HOME
+    START_USER --> USER_MODULE
+    HOME --> H_CAROUSEL & H_CATEGORY & H_LATEST & H_HOT & H_NAV
+    H_NAV --> BROWSE & SEARCH & CART & USER_MODULE
+    H_CATEGORY --> B_LIST
+    B_LIST --> B_DETAIL
+    B_DETAIL --> C_ADD & O_SUBMIT
+    SEARCH --> S_KEYWORD & S_FILTER --> S_RESULT --> B_DETAIL
+    C_ADD --> C_LIST
+    C_LIST --> C_UPDATE & C_DELETE & C_CHECKOUT
+    C_CHECKOUT --> O_SUBMIT
+    O_SUBMIT --> O_BUYER & O_SELLER
+    O_BUYER --> O_PAY --> O_CONFIRM
+    O_SELLER --> O_SHIP
+    O_BUYER & O_SELLER --> O_CANCEL
+    USER_MODULE --> U_REG & U_LOGIN & U_LOGOUT & U_PROFILE & U_PWD
+    U_LOGIN --> CENTER
+    CENTER --> PC_PRODUCTS & PC_FAVORITES & PC_ORDERS & PC_SETTINGS & PC_PUBLISH & PC_EDIT
+
+    style USER_MODULE fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style HOME fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style BROWSE fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style SEARCH fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style CART fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style ORDER fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style CENTER fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    </div>
+  </div>
+
+  <!-- ================== 后台管理系统详细流程图 ================== -->
+  <div class="chart-section">
+    <h2>三、后台管理系统 - 详细功能结构</h2>
+    <div class="mermaid">
+graph TB
+    ADMIN_LOGIN["🔐 管理员登录<br/>isadmin=1 权限校验"]
+
+    subgraph DASHBOARD["📊 管理仪表盘"]
+        D_OVERVIEW["数据概览<br/>用户数/商品数统计"]
+        D_CATEGORY["分类统计<br/>各分类商品数量"]
+    end
+
+    subgraph USER_MGMT["👥 用户管理"]
+        UM_LIST["用户列表<br/>分页展示所有用户"]
+        UM_BAN["封禁用户<br/>设置status=0"]
+        UM_UNBAN["解封用户<br/>设置status=1"]
+        UM_SEARCH["用户搜索<br/>按用户名/学号筛选"]
+    end
+
+    subgraph PRODUCT_MGMT["📦 商品管理"]
+        PM_LIST["商品列表<br/>分页展示全部商品"]
+        PM_OFFSHELF["下架商品<br/>设置status=2"]
+        PM_VIEW["查看详情<br/>商品完整信息"]
+    end
+
+    subgraph CATEGORY_MGMT["📂 分类管理"]
+        CM_LIST["分类列表<br/>展示所有分类"]
+        CM_ADD["添加分类<br/>名称+描述"]
+        CM_EDIT["编辑分类<br/>修改名称/描述"]
+        CM_DELETE["删除分类<br/>级联处理关联商品"]
+    end
+
+    subgraph CAROUSEL_MGMT["🎠 轮播图管理"]
+        CR_LIST["轮播图列表<br/>展示所有轮播项"]
+        CR_ADD["添加轮播图<br/>标题+图片+链接+排序"]
+        CR_EDIT["编辑轮播图<br/>修改标题/图片/链接"]
+        CR_DELETE["删除轮播图<br/>移除轮播项"]
+        CR_SORT["排序调整<br/>修改sort_order"]
+    end
+
+    subgraph PERMISSION["🛡️ 权限控制"]
+        P_FILTER["AdminFilter<br/>URL级别拦截"]
+        P_CHECK["角色校验<br/>isadmin字段判断"]
+        P_REDIRECT["越权处理<br/>重定向至首页"]
+    end
+
+    ADMIN_LOGIN --> DASHBOARD
+    ADMIN_LOGIN --> USER_MGMT
+    ADMIN_LOGIN --> PRODUCT_MGMT
+    ADMIN_LOGIN --> CATEGORY_MGMT
+    ADMIN_LOGIN --> CAROUSEL_MGMT
+    ADMIN_LOGIN --> PERMISSION
+
+    DASHBOARD --> D_OVERVIEW & D_CATEGORY
+    USER_MGMT --> UM_LIST
+    UM_LIST --> UM_BAN & UM_UNBAN & UM_SEARCH
+    PRODUCT_MGMT --> PM_LIST
+    PM_LIST --> PM_OFFSHELF & PM_VIEW
+    CATEGORY_MGMT --> CM_LIST
+    CM_LIST --> CM_ADD & CM_EDIT & CM_DELETE
+    CAROUSEL_MGMT --> CR_LIST
+    CR_LIST --> CR_ADD & CR_EDIT & CR_DELETE & CR_SORT
+    PERMISSION --> P_FILTER --> P_CHECK --> P_REDIRECT
+
+    style DASHBOARD fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style USER_MGMT fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style PRODUCT_MGMT fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style CATEGORY_MGMT fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style CAROUSEL_MGMT fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style PERMISSION fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    </div>
+  </div>
+
+  <!-- ================== 核心业务流程 ================== -->
+  <div class="chart-section">
+    <h2>四、核心业务流程图 - 商品交易完整流程</h2>
+    <div class="mermaid">
+flowchart TD
+    A["👤 卖家发布商品"] --> B["📦 商品上架<br/>status=0 在售"]
+    B --> C["🔍 买家浏览/搜索商品"]
+    C --> D{"是否加入购物车?"}
+    D -->|是| E["🛒 加入购物车"]
+    D -->|否| F["🛍️ 立即购买"]
+    E --> G["📋 购物车管理<br/>修改数量/删除/结算"]
+    G --> H["📝 填写订单信息<br/>联系人/地址/留言"]
+    F --> H
+    H --> I["✅ 提交订单<br/>status=0 待付款"]
+    I --> J{"买家操作"}
+    J -->|付款| K["💳 确认付款<br/>status=1 已付款"]
+    J -->|取消| L["❌ 取消订单<br/>status=4 已取消<br/>商品恢复在售"]
+    K --> M{"卖家操作"}
+    M -->|发货| N["📬 确认发货<br/>status=2 已发货"]
+    N --> O{"买家操作"}
+    O -->|确认收货| P["✅ 确认收货<br/>status=3 已完成"]
+    O -->|取消| L
+    M -->|取消| L
+    P --> Q["🎉 交易完成<br/>商品状态变为已售"]
+
+    style A fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style B fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style C fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style D fill:#fffbe6,stroke:#faad14,stroke-width:2px
+    style E fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style F fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style G fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style H fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style I fill:#f6ffed,stroke:#52c41a,stroke-width:2px
+    style J fill:#fffbe6,stroke:#faad14,stroke-width:2px
+    style K fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style L fill:#fff1f0,stroke:#ff4d4f,stroke-width:2px
+    style M fill:#fffbe6,stroke:#faad14,stroke-width:2px
+    style N fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style O fill:#fffbe6,stroke:#faad14,stroke-width:2px
+    style P fill:#f6ffed,stroke:#52c41a,stroke-width:2px
+    style Q fill:#f6ffed,stroke:#52c41a,stroke-width:2px
+    </div>
+  </div>
+
+  <!-- ================== 技术架构图 ================== -->
+  <div class="chart-section">
+    <h2>五、技术架构层次图</h2>
+    <div class="mermaid">
+graph LR
+    subgraph VIEW["🎨 视图层 View"]
+        JSP["JSP 页面<br/>JSTL标签库<br/>Tailwind CSS<br/>JavaScript/jQuery"]
+    end
+
+    subgraph CONTROLLER["🎮 控制器层 Controller"]
+        BASE["BaseServlet<br/>反射方法路由<br/>method参数分发"]
+        SERVLET["IndexServlet / UserServlet<br/>ProductServlet / OrderServlet<br/>CartServlet / AdminServlet<br/>CategoryServlet / FavoriteServlet<br/>CarouselServlet"]
+    end
+
+    subgraph SERVICE["⚙️ 业务逻辑层 Service"]
+        SVC["UserService<br/>ProductService<br/>OrderService<br/>CartService<br/>CategoryService<br/>FavoriteService<br/>CarouselService"]
+    end
+
+    subgraph DAO["💾 数据访问层 DAO"]
+        DAO_CLASS["UserDao / ProductDao<br/>OrderDao / CartDao<br/>CategoryDao / FavoriteDao<br/>CarouselDao"]
+    end
+
+    subgraph DB_LAYER["🗄️ 数据层"]
+        DB_POOL["C3P0 连接池"]
+        MYSQL["MySQL 8.0<br/>tradehub 数据库"]
+        DBUTILS["Apache Commons DbUtils<br/>QueryRunner"]
+    end
+
+    VIEW -->|HTTP请求| CONTROLLER
+    CONTROLLER --> BASE
+    BASE --> SERVLET
+    SERVLET -->|调用| SERVICE
+    SERVICE -->|调用| DAO
+    DAO --> DBUTILS
+    DBUTILS --> DB_POOL
+    DB_POOL --> MYSQL
+    SERVICE -->|返回数据| SERVLET
+    SERVLET -->|转发/重定向| VIEW
+
+    style VIEW fill:#fff7f0,stroke:#FF5000,stroke-width:2px
+    style CONTROLLER fill:#f0f7ff,stroke:#1890ff,stroke-width:2px
+    style SERVICE fill:#f6ffed,stroke:#52c41a,stroke-width:2px
+    style DAO fill:#fffbe6,stroke:#faad14,stroke-width:2px
+    style DB_LAYER fill:#f9f0ff,stroke:#722ed1,stroke-width:2px
+    </div>
+  </div>
+
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+      padding: 20
+    },
+    securityLevel: 'loose'
+  });
+</script>
+</body>
+</html>

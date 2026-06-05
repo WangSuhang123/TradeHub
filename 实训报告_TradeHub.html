@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->
+<style>
+@page {
+  size: A4;
+  margin: 2.54cm 3.18cm 2.54cm 3.18cm;
+}
+body {
+  font-family: "宋体", SimSun, serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: #000;
+}
+h2 {
+  font-family: "黑体", SimHei, sans-serif;
+  font-size: 16pt;
+  text-align: center;
+  font-weight: bold;
+}
+h3 {
+  font-family: "黑体", SimHei, sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+}
+h4 {
+  font-family: "黑体", SimHei, sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+}
+p { text-indent: 2em; margin: 6pt 0; }
+p.no-indent { text-indent: 0; }
+.center { text-align: center; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10pt 0;
+}
+table, th, td {
+  border: 1px solid #000;
+}
+th, td {
+  padding: 4pt 8pt;
+  font-size: 10.5pt;
+  text-align: center;
+}
+th { background-color: #f0f0f0; font-weight: bold; }
+.cover-title { font-size: 22pt; font-weight: bold; font-family: "黑体", SimHei; text-align: center; margin: 30pt 0; }
+.cover-info { font-size: 14pt; text-align: center; margin: 10pt 0; }
+.cover-info span { text-decoration: underline; }
+.code-block {
+  font-family: "Courier New", monospace;
+  font-size: 9pt;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 8pt;
+  margin: 6pt 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.page-break { page-break-before: always; }
+.tip { color: #999; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div style="text-align:center; margin-top:80pt;">
+  <div class="cover-title">实验指导书</div>
+  <div style="height:60pt;"></div>
+  <div class="cover-info">题&nbsp;&nbsp;&nbsp;&nbsp;目：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;校园二手交易平台——TradeHub&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div class="cover-info">专业名称：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div class="cover-info">所在班级：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div class="cover-info">学生学号：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div class="cover-info">学生姓名：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div class="cover-info">任课教师：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张丽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div class="cover-info">成&nbsp;&nbsp;&nbsp;&nbsp;绩：&nbsp;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+  <div style="height:40pt;"></div>
+  <div class="cover-info">2026年6月</div>
+</div>
+
+<!-- ==================== 正文 ==================== -->
+<div class="page-break"></div>
+<h2>一、实训要求</h2>
+<p>1. 设计并制作一个表达某一主题的网站。</p>
+<p>2. 整个网站要突出主题，内容健康，思想积极向上。</p>
+<p>3. 网站的模块设计图应有简单介绍。网站中数据表至少5个，并简单说明表的功能。网站至少含有6个页面，页面中图片大小一致，页面设计美观大方，布局合理，操作灵活，运行准确无误。网站至少进行3个功能测试，验证网站功能的正确性。</p>
+<p>4. 实训报告中需包含网站需求分析与数据库设计、网站模块详细设计及网站功能实现。</p>
+<p>5. 前台功能要求：</p>
+<p>（1）首页有导航栏，各个页面可以互相链接跳转。</p>
+<p>（2）可以看到后台模块发布的信息。</p>
+<p>（3）各个版块内容清晰，便于用户浏览。</p>
+<p>6. 后台功能要求：</p>
+<p>（1）管理员可登录后台管理系统。</p>
+<p>（2）后台系统管理业务逻辑清晰。</p>
+<p>7. 代码应是核心代码，可以有少量HTML代码。</p>
+<p>8. 实训报告中行文格式应符合要求，字体是宋体小四号，不能出现上下文格式不一致的情况。</p>
+<p>9. 严格要求每位同学各自独立完成。</p>
+
+<h2>二、实训提交说明</h2>
+<p>1. 提交纸版（将所做的内容打印）和电子版。</p>
+<p>2. 把网站源代码（包含数据库文件）打包成为一个压缩包，命名格式为：学号+姓名+班级.rar。</p>
+<p>3. 使用A4纸彩色打印，封面单面打印，正文开始双面打印，左侧装订，表格单独打印，有字页面朝外。</p>
+
+<div class="page-break"></div>
+<h2>一、网站需求分析与数据库设计</h2>
+
+<h3>1. 需求分析</h3>
+<p>TradeHub是一个校园二手交易平台，旨在为在校大学生提供一个安全、便捷的闲置物品交易渠道。随着大学生消费观念的转变，校园内闲置物品的流转需求日益增长。传统的线下交易存在信息不对称、交易效率低下等问题。本平台通过互联网技术，将买家与卖家有效连接，实现商品发布、浏览、购买、订单管理等一站式服务。系统采用B/S架构，分为前台用户系统和后台管理系统两部分。前台支持用户注册登录、商品分类浏览、关键词搜索、购物车管理、订单提交与跟踪、收藏商品等功能；后台支持管理员对用户、商品、分类、轮播图等进行统一管理。通过该平台，可以实现校园资源的循环利用，促进绿色校园建设。</p>
+
+<h3>2. 数据库设计</h3>
+<p>本系统使用MySQL数据库，数据库名为tradehub，采用utf8mb4字符集。共设计8张数据表，各表结构如下：</p>
+
+<h4>（1）用户（user）表</h4>
+<p>用户表用于保存系统前台用户和管理员的信息。用户表如表1所示。</p>
+<p class="center"><b>表1 用户表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>用户编号，自增</td></tr>
+  <tr><td>username</td><td>varchar(45)</td><td>-</td><td>否</td><td>用户名，唯一</td></tr>
+  <tr><td>student_id</td><td>varchar(45)</td><td>-</td><td>可空</td><td>学号，唯一</td></tr>
+  <tr><td>email</td><td>varchar(45)</td><td>-</td><td>可空</td><td>邮箱，唯一</td></tr>
+  <tr><td>password</td><td>varchar(45)</td><td>-</td><td>否</td><td>登录密码</td></tr>
+  <tr><td>name</td><td>varchar(45)</td><td>-</td><td>可空</td><td>真实姓名</td></tr>
+  <tr><td>phone</td><td>varchar(45)</td><td>-</td><td>可空</td><td>联系电话</td></tr>
+  <tr><td>address</td><td>varchar(100)</td><td>-</td><td>可空</td><td>收货地址</td></tr>
+  <tr><td>avatar</td><td>varchar(200)</td><td>-</td><td>可空</td><td>头像URL</td></tr>
+  <tr><td>school</td><td>varchar(100)</td><td>-</td><td>可空</td><td>所在学校</td></tr>
+  <tr><td>qq</td><td>varchar(45)</td><td>-</td><td>可空</td><td>QQ号码</td></tr>
+  <tr><td>isadmin</td><td>bit(1)</td><td>-</td><td>否</td><td>是否管理员，默认0</td></tr>
+  <tr><td>status</td><td>tinyint(1)</td><td>-</td><td>否</td><td>用户状态，1正常/0封禁</td></tr>
+</table>
+
+<h4>（2）商品（product）表</h4>
+<p>商品表用于存储用户发布的二手商品信息。商品表如表2所示。</p>
+<p class="center"><b>表2 商品表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>商品编号，自增</td></tr>
+  <tr><td>name</td><td>varchar(100)</td><td>-</td><td>否</td><td>商品名称</td></tr>
+  <tr><td>price</td><td>float</td><td>-</td><td>否</td><td>售价</td></tr>
+  <tr><td>price_original</td><td>float</td><td>-</td><td>可空</td><td>原价</td></tr>
+  <tr><td>description</td><td>text</td><td>-</td><td>可空</td><td>商品描述</td></tr>
+  <tr><td>image</td><td>varchar(200)</td><td>-</td><td>可空</td><td>商品图片路径</td></tr>
+  <tr><td>condition_level</td><td>tinyint(1)</td><td>-</td><td>可空</td><td>成色：1全新/2几乎全新/3有使用痕迹/4老旧</td></tr>
+  <tr><td>status</td><td>tinyint(1)</td><td>-</td><td>可空</td><td>状态：0在售/1已售/2下架</td></tr>
+  <tr><td>views</td><td>int</td><td>-</td><td>可空</td><td>浏览量，默认0</td></tr>
+  <tr><td>created_time</td><td>datetime</td><td>-</td><td>可空</td><td>发布时间</td></tr>
+  <tr><td>user_id</td><td>int</td><td>外键</td><td>否</td><td>发布者ID，关联user表</td></tr>
+  <tr><td>category_id</td><td>int</td><td>外键</td><td>可空</td><td>分类ID，关联category表</td></tr>
+</table>
+
+<h4>（3）分类（category）表</h4>
+<p>分类表用于存储商品的分类信息。分类表如表3所示。</p>
+<p class="center"><b>表3 分类表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>分类编号，自增</td></tr>
+  <tr><td>name</td><td>varchar(45)</td><td>-</td><td>否</td><td>分类名称</td></tr>
+  <tr><td>description</td><td>varchar(200)</td><td>-</td><td>可空</td><td>分类描述</td></tr>
+</table>
+
+<h4>（4）订单（order）表</h4>
+<p>订单表用于记录用户之间的交易订单信息。订单表如表4所示。</p>
+<p class="center"><b>表4 订单表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>订单编号，自增</td></tr>
+  <tr><td>total</td><td>float</td><td>-</td><td>否</td><td>交易金额</td></tr>
+  <tr><td>status</td><td>tinyint(1)</td><td>-</td><td>可空</td><td>0待付款/1已付款/2已发货/3已完成/4已取消</td></tr>
+  <tr><td>name</td><td>varchar(45)</td><td>-</td><td>可空</td><td>联系人</td></tr>
+  <tr><td>phone</td><td>varchar(45)</td><td>-</td><td>可空</td><td>联系电话</td></tr>
+  <tr><td>address</td><td>varchar(200)</td><td>-</td><td>可空</td><td>交易地点</td></tr>
+  <tr><td>seller_msg</td><td>varchar(500)</td><td>-</td><td>可空</td><td>卖家留言</td></tr>
+  <tr><td>datetime</td><td>datetime</td><td>-</td><td>可空</td><td>下单时间</td></tr>
+  <tr><td>buyer_id</td><td>int</td><td>外键</td><td>否</td><td>买家ID，关联user表</td></tr>
+  <tr><td>seller_id</td><td>int</td><td>外键</td><td>否</td><td>卖家ID，关联user表</td></tr>
+</table>
+
+<h4>（5）订单项（orderitem）表</h4>
+<p>订单项表用于记录每个订单包含的具体商品信息。订单项表如表5所示。</p>
+<p class="center"><b>表5 订单项表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>订单项编号，自增</td></tr>
+  <tr><td>price</td><td>float</td><td>-</td><td>否</td><td>成交价</td></tr>
+  <tr><td>product_id</td><td>int</td><td>外键</td><td>否</td><td>商品ID，关联product表</td></tr>
+  <tr><td>order_id</td><td>int</td><td>外键</td><td>否</td><td>订单ID，关联order表</td></tr>
+</table>
+
+<h4>（6）购物车（cart）表</h4>
+<p>购物车表用于存储用户添加到购物车中的商品信息。购物车表如表6所示。</p>
+<p class="center"><b>表6 购物车表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>购物车记录编号，自增</td></tr>
+  <tr><td>user_id</td><td>int</td><td>外键</td><td>否</td><td>用户ID，关联user表</td></tr>
+  <tr><td>product_id</td><td>int</td><td>外键</td><td>否</td><td>商品ID，关联product表</td></tr>
+  <tr><td>quantity</td><td>int</td><td>-</td><td>否</td><td>数量，默认1</td></tr>
+  <tr><td>created_time</td><td>datetime</td><td>-</td><td>可空</td><td>添加时间</td></tr>
+</table>
+
+<h4>（7）收藏（favorite）表</h4>
+<p>收藏表用于存储用户收藏的商品信息。收藏表如表7所示。</p>
+<p class="center"><b>表7 收藏表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>收藏记录编号，自增</td></tr>
+  <tr><td>user_id</td><td>int</td><td>外键</td><td>否</td><td>用户ID，关联user表</td></tr>
+  <tr><td>product_id</td><td>int</td><td>外键</td><td>否</td><td>商品ID，关联product表</td></tr>
+  <tr><td>created_time</td><td>datetime</td><td>-</td><td>可空</td><td>收藏时间</td></tr>
+</table>
+
+<h4>（8）轮播图（carousel）表</h4>
+<p>轮播图表用于存储首页轮播广告图片的信息。轮播图表如表8所示。</p>
+<p class="center"><b>表8 轮播图表</b></p>
+<table>
+  <tr><th>字段名称</th><th>字段类型及长度</th><th>主/外键</th><th>是否为空</th><th>备注</th></tr>
+  <tr><td>id</td><td>int</td><td>主键</td><td>否</td><td>轮播图编号，自增</td></tr>
+  <tr><td>title</td><td>varchar(50)</td><td>-</td><td>否</td><td>标题</td></tr>
+  <tr><td>image</td><td>varchar(255)</td><td>-</td><td>否</td><td>图片路径</td></tr>
+  <tr><td>link</td><td>varchar(255)</td><td>-</td><td>可空</td><td>点击链接</td></tr>
+  <tr><td>sort_order</td><td>int</td><td>-</td><td>可空</td><td>排序序号</td></tr>
+  <tr><td>status</td><td>int</td><td>-</td><td>可空</td><td>状态：1启用/0禁用</td></tr>
+</table>
+
+<div class="page-break"></div>
+<h2>二、网站模块详细设计</h2>
+
+<p>TradeHub校园二手交易平台采用B/S（Browser/Server）架构，基于Java EE技术体系开发。系统整体采用MVC（Model-View-Controller）设计模式，以Servlet作为控制器层接收请求并调用业务逻辑，JSP作为视图层展示页面内容，DAO（Data Access Object）和Service层作为模型层负责数据持久化和业务逻辑处理。</p>
+
+<p>系统分为前台用户系统和后台管理系统两大模块。前台面向所有校园用户，提供商品浏览、搜索、购买等核心交易功能；后台面向管理员，提供系统管理和数据维护功能。BaseServlet基类通过Java反射机制实现方法级请求路由，使得每个Servlet可以通过URL参数"method"指定具体调用哪个方法，简化了Servlet的数量和管理。</p>
+
+<p>系统功能模块结构如图1所示：</p>
+
+<div class="center">
+  <h4>图1 TradeHub校园二手交易平台功能模块图</h4>
+  <pre style="text-align:left;font-family:'宋体',SimSun,serif;font-size:10pt;line-height:1.8;">
+┌─────────────────────────────────────────────────────────────┐
+│                   TradeHub 校园二手交易平台                      │
+├───────────────────────┬─────────────────────────────────────┤
+│     前台用户系统         │          后台管理系统                  │
+├───────────────────────┼─────────────────────────────────────┤
+│  ┌─ 用户模块 ────────┐ │  ┌─ 管理仪表盘 ─────┐                │
+│  │ · 用户注册         │ │  │ · 数据统计概览    │                │
+│  │ · 用户登录/登出    │ │  └─────────────────┘                │
+│  │ · 个人信息管理     │ │                                     │
+│  │ · 密码修改         │ │  ┌─ 用户管理 ──────┐                │
+│  └───────────────────┘ │  │ · 用户列表        │                │
+│                         │  │ · 用户封禁/解封   │                │
+│  ┌─ 商品模块 ────────┐ │  └─────────────────┘                │
+│  │ · 商品分类浏览     │ │                                     │
+│  │ · 商品关键词搜索   │ │  ┌─ 商品管理 ──────┐                │
+│  │ · 商品详情查看     │ │  │ · 商品列表        │                │
+│  │ · 商品发布         │ │  │ · 商品下架        │                │
+│  │ · 商品编辑/删除    │ │  └─────────────────┘                │
+│  │ · 我的商品管理     │ │                                     │
+│  └───────────────────┘ │  ┌─ 分类管理 ──────┐                │
+│                         │  │ · 分类增删改查    │                │
+│  ┌─ 购物车模块 ──────┐ │  └─────────────────┘                │
+│  │ · 加入购物车       │ │                                     │
+│  │ · 购物车列表       │ │  ┌─ 轮播图管理 ────┐                │
+│  │ · 修改数量         │ │  │ · 轮播图增删改查  │                │
+│  │ · 删除商品         │ │  └─────────────────┘                │
+│  │ · 批量结算         │ │                                     │
+│  └───────────────────┘ │                                     │
+│                         │                                     │
+│  ┌─ 订单模块 ────────┐ │                                     │
+│  │ · 订单提交         │ │                                     │
+│  │ · 买家订单列表     │ │                                     │
+│  │ · 卖家订单列表     │ │                                     │
+│  │ · 付款/发货/收货   │ │                                     │
+│  │ · 取消订单         │ │                                     │
+│  └───────────────────┘ │                                     │
+│                         │                                     │
+│  ┌─ 收藏模块 ────────┐ │                                     │
+│  │ · 添加/取消收藏    │ │                                     │
+│  │ · 收藏列表         │ │                                     │
+│  └───────────────────┘ │                                     │
+└───────────────────────┴─────────────────────────────────────┘
+  </pre>
+</div>
+
+<div class="page-break"></div>
+<h2>三、网站功能实现</h2>
+
+<h3>1. 首页界面</h3>
+<p>首页是用户进入系统后看到的第一个页面，集成了平台的核心入口。页面顶部包含导航栏，提供Logo品牌标识、商品搜索框、购物车入口、用户登录/注册按钮以及用户菜单（个人中心、我的订单、我的收藏、发布商品、后台管理、退出登录）。中间区域展示轮播广告图，支持自动轮播与手动切换。下方显示商品分类快捷入口和"最新发布"商品列表（每行3个商品卡片），侧边栏展示"热门推荐"排行榜。商品卡片包含图片、名称、分类标签、成色、价格和折扣信息。整个页面采用Tailwind CSS框架实现响应式布局，适配不同屏幕尺寸。</p>
+<p><b>首页界面核心代码：</b></p>
+<div class="code-block">// IndexServlet.java - 首页数据加载
+public class IndexServlet extends BaseServlet {
+    private ProductService pService = new ProductService();
+    private CarouselService carouselService = new CarouselService();
+
+    public String index(HttpServletRequest request, HttpServletResponse response) {
+        request.setAttribute("latestList", pService.getLatestList(1, 12));
+        request.setAttribute("hotList", pService.getHotList(10));
+        request.setAttribute("carouselList", carouselService.getActive());
+        return "/index.jsp";
+    }
+}</div>
+
+<h3>2. 用户登录注册界面</h3>
+<p>登录页面提供学号和密码的登录表单。用户输入学号和密码后，系统通过UserService进行身份验证，验证成功后将会话信息存入Session并跳转至首页。若账号已被管理员封禁，则提示"您的账号已被封禁"；若凭证错误则提示"学号或密码错误"。注册页面需要填写用户名、学号、密码、确认密码、姓名、手机号、学校、邮箱、QQ等信息，系统会校验证两次密码是否一致，以及学号和用户名是否已被注册。注册成功后提示跳转至登录页。</p>
+<p><b>用户登录核心代码：</b></p>
+<div class="code-block">// UserServlet.java - 登录方法
+public String login(HttpServletRequest request, HttpServletResponse response) {
+    if ("GET".equalsIgnoreCase(request.getMethod())) {
+        return "/user_login.jsp";
+    }
+    String studentId = request.getParameter("student_id");
+    String password = request.getParameter("password");
+    User user = uService.login(studentId, password);
+    if (user == null) {
+        request.setAttribute("failMsg", "学号或密码错误，请重新登录！");
+        return "/user_login.jsp";
+    }
+    if (user.getStatus() == 0) {
+        request.setAttribute("failMsg", "您的账号已被封禁，请联系管理员！");
+        return "/user_login.jsp";
+    }
+    request.getSession().setAttribute("user", user);
+    return "redirect:/index";
+}</div>
+
+<h3>3. 商品列表与搜索界面</h3>
+<p>商品列表页面展示所有在售商品，支持按分类筛选，分页展示（每页10条），并提供"最新"、"价格从低到高"、"价格从高到低"三种排序方式。每个商品以卡片形式展示图片、名称、分类、成色、价格、浏览量和折扣标签。商品搜索功能允许用户输入关键词，并可按分类、价格区间进行筛选，搜索结果同样支持分页和排序。用户点击商品卡片即可进入商品详情页。</p>
+<p><b>商品列表核心代码：</b></p>
+<div class="code-block">// ProductServlet.java - 商品列表
+public String list(HttpServletRequest request, HttpServletResponse response) {
+    int categoryId = 0;
+    int pageNumber = 1;
+    String sort = request.getParameter("sort");
+    if (request.getParameter("categoryId") != null)
+        categoryId = Integer.parseInt(request.getParameter("categoryId"));
+    if (request.getParameter("pageNumber") != null)
+        pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+    if (sort == null) sort = "newest";
+    Page p = pService.getProductPage(categoryId, pageNumber, sort);
+    request.setAttribute("p", p);
+    request.setAttribute("categoryId", categoryId);
+    request.setAttribute("sort", sort);
+    return "/product_list.jsp";
+}</div>
+
+<h3>4. 商品详情与发布界面</h3>
+<p>商品详情页面展示商品的完整信息，包括商品大图、名称、价格（含原价和折扣）、成色描述、分类标签、浏览量、商品描述文本以及卖家信息。登录用户可以对商品进行"加入购物车"、"立即购买"、"收藏"等操作。商品发布页面允许已登录用户通过富文本表单发布商品，需要填写商品名称、售价、原价、分类、成色、描述并上传商品图片。上传的图片由服务器自动重命名为UUID格式存储。发布成功后跳转至商品列表。</p>
+<p><b>商品发布核心代码（文件上传部分）：</b></p>
+<div class="code-block">// ProductServlet.java - 商品发布（文件上传）
+String fileName = part.getSubmittedFileName();
+if (fileName != null && !fileName.isEmpty()) {
+    String uploadPath = request.getServletContext().getRealPath("/picture/");
+    String uuidName = UUID.randomUUID().toString()
+        + fileName.substring(fileName.lastIndexOf("."));
+    File uploadDir = new File(uploadPath);
+    if (!uploadDir.exists()) {
+        uploadDir.mkdirs();
+    }
+    part.write(uploadPath + uuidName);
+    product.setImage("picture/" + uuidName);
+}</div>
+
+<h3>5. 购物车与订单界面</h3>
+<p>购物车页面展示用户已添加的商品列表，包括商品图片、名称、单价、数量（可增减）、小计金额。支持单选/全选商品、批量删除、清空购物车等操作，底部显示已选商品总金额和"去结算"按钮。订单提交页面需要用户确认联系人、电话、交易地址等信息并填写卖家留言，提交后生成订单记录。订单列表页面分为"我是买家"和"我是卖家"两个Tab页，分别展示用户作为买家或卖家的订单，支持按订单状态筛选（待付款/已付款/已发货/已完成/已取消）。订单状态流转为：买家下单→待付款→买家付款→已付款→卖家发货→已发货→买家确认收货→已完成。</p>
+<p><b>订单确认核心代码：</b></p>
+<div class="code-block">// OrderServlet.java - 订单确认
+public String confirm(HttpServletRequest request, HttpServletResponse response) {
+    User user = (User) request.getSession().getAttribute("user");
+    if (user == null) return "redirect:/user?method=login";
+    int productId = Integer.parseInt(request.getParameter("productId"));
+    Product product = pService.getById(productId);
+    if (product.getUserId() == user.getId()) {
+        request.setAttribute("failMsg", "不能购买自己发布的商品");
+        return "/order_submit.jsp";
+    }
+    Order order = new Order();
+    order.setTotal(product.getPrice());
+    order.setStatus(0);
+    order.setBuyerId(user.getId());
+    order.setSellerId(product.getUserId());
+    // ... 设置订单明细 ...
+    oService.addOrder(order);
+    return "redirect:/order?method=myOrders";
+}</div>
+
+<h3>6. 后台管理系统界面</h3>
+<p>后台管理系统仅供管理员角色访问（isadmin=1），通过AdminFilter过滤器进行权限校验。后台首页展示系统关键数据。用户管理页面展示所有用户列表，管理员可以对违规用户执行封禁/解封操作。商品管理页面展示全部商品列表，管理员可对违规商品执行下架操作。分类管理页面支持分类的增删改查。轮播图管理页面支持首页轮播广告的上传、编辑和排序。</p>
+<p><b>后台管理核心代码（分类管理）：</b></p>
+<div class="code-block">// AdminServlet.java - 分类管理
+public String categoryAdd(HttpServletRequest request, HttpServletResponse response) {
+    String name = request.getParameter("name");
+    String description = request.getParameter("description");
+    Category category = new Category();
+    category.setName(name);
+    category.setDescription(description);
+    cService.add(category);
+    return "redirect:/admin?method=categoryList";
+}
+
+public String categoryDelete(HttpServletRequest request, HttpServletResponse response) {
+    int id = Integer.parseInt(request.getParameter("id"));
+    cService.delete(id);
+    return "redirect:/admin?method=categoryList";
+}</div>
+
+<div class="page-break"></div>
+<h3>7. 功能测试</h3>
+
+<h4>（1）登录功能测试</h4>
+<p>登录功能测试表如表9所示。</p>
+<p class="center"><b>表9 登录功能测试表</b></p>
+<table>
+  <tr><th>测试名称</th><th>测试步骤</th><th>预期结果</th><th>测试结果</th></tr>
+  <tr>
+    <td>用户"登录"测试</td>
+    <td>1. 打开"登录"界面<br>2. 输入正确的学号和密码<br>3. 单击"登录"</td>
+    <td>成功登录系统，跳转到"首页"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>学号为"空"时登录测试</td>
+    <td>1. 打开"登录"界面<br>2. 不输入学号<br>3. 单击"登录"</td>
+    <td>提示"学号或密码错误"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>密码为"空"时登录测试</td>
+    <td>1. 打开"登录"界面<br>2. 输入学号但不输入密码<br>3. 单击"登录"</td>
+    <td>提示"学号或密码错误"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>输入"错误学号"登录测试</td>
+    <td>1. 打开"登录"界面<br>2. 输入不存在的学号<br>3. 单击"登录"</td>
+    <td>提示"学号或密码错误"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>输入"错误密码"登录测试</td>
+    <td>1. 打开"登录"界面<br>2. 输入正确学号但错误密码<br>3. 单击"登录"</td>
+    <td>提示"学号或密码错误"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>被封禁用户登录测试</td>
+    <td>1. 打开"登录"界面<br>2. 输入已被封禁的账号<br>3. 单击"登录"</td>
+    <td>提示"您的账号已被封禁"</td>
+    <td>符合预期结果</td>
+  </tr>
+</table>
+
+<h4>（2）商品发布功能测试</h4>
+<p>商品发布功能测试表如表10所示。</p>
+<p class="center"><b>表10 商品发布功能测试表</b></p>
+<table>
+  <tr><th>测试名称</th><th>测试步骤</th><th>预期结果</th><th>测试结果</th></tr>
+  <tr>
+    <td>已登录用户发布商品</td>
+    <td>1. 登录系统<br>2. 点击"发布"按钮<br>3. 填写商品信息并上传图片<br>4. 单击"发布"</td>
+    <td>成功发布商品，跳转至商品列表页，新商品可见</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>未登录用户发布商品</td>
+    <td>1. 不登录直接访问"/product?method=publish"</td>
+    <td>自动跳转至登录页面</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>上传商品图片</td>
+    <td>1. 在发布页选择图片文件<br>2. 提交表单</td>
+    <td>图片成功上传到服务器，以UUID命名存储</td>
+    <td>符合预期结果</td>
+  </tr>
+</table>
+
+<h4>（3）订单流程测试</h4>
+<p>订单流程测试表如表11所示。</p>
+<p class="center"><b>表11 订单流程测试表</b></p>
+<table>
+  <tr><th>测试名称</th><th>测试步骤</th><th>预期结果</th><th>测试结果</th></tr>
+  <tr>
+    <td>购买商品创建订单</td>
+    <td>1. 登录买家账号<br>2. 浏览商品并点击"立即购买"<br>3. 填写联系人信息<br>4. 单击"提交订单"</td>
+    <td>订单创建成功，跳转至订单列表，订单状态为"待付款"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>买家付款</td>
+    <td>1. 在订单列表点击"付款"<br>2. 确认付款</td>
+    <td>订单状态更新为"已付款"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>卖家发货</td>
+    <td>1. 用卖家账号登录<br>2. 在订单列表点击"发货"</td>
+    <td>订单状态更新为"已发货"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>买家确认收货</td>
+    <td>1. 用买家账号登录<br>2. 在订单列表点击"确认收货"</td>
+    <td>订单状态更新为"已完成"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>不能购买自己发布的商品</td>
+    <td>1. 发布一个商品<br>2. 尝试用同一账号购买该商品</td>
+    <td>提示"不能购买自己发布的商品"</td>
+    <td>符合预期结果</td>
+  </tr>
+  <tr>
+    <td>取消订单</td>
+    <td>1. 在待付款状态下点击"取消订单"</td>
+    <td>订单状态更新为"已取消"，商品恢复在售状态</td>
+    <td>符合预期结果</td>
+  </tr>
+</table>
+
+<div class="page-break"></div>
+<h2>四、实验总结</h2>
+
+<p>通过本次Web应用开发实训，我成功设计并实现了一个功能完善的校园二手交易平台——TradeHub。在项目开发过程中，我深入实践了Java EE的Web开发技术体系，将课堂所学理论知识应用于实际项目开发中。</p>
+
+<p><b>技术收获方面：</b>我掌握了Servlet + JSP的MVC开发模式，深入理解了BaseServlet通过反射机制实现方法级路由的设计思想。通过使用C3P0连接池和Apache Commons DbUtils，我学会了如何高效地进行数据库操作和管理数据库连接。在数据库设计方面，我实践了MySQL的关系型数据库表结构设计、主外键约束、唯一索引等技术，设计了8张数据表来支撑整个业务系统。在前端方面，我使用JSTL标签库实现动态数据渲染，使用Tailwind CSS框架实现现代化响应式界面设计，使用原生JavaScript实现了轮播图、购物车交互等功能。此外，我还实践了文件上传（Servlet 3.0的Part API）、过滤器（编码过滤和管理员权限过滤）、监听器（ApplicationListener初始化数据）等Java Web高级特性。</p>
+
+<p><b>遇到的问题及解决方案：</b>（1）web.xml配置问题：项目部署后出现404错误，经排查发现IDEA的Web Facet指向了一个空的web.xml文件，而正确的web.xml在模块源码目录下。解决方案是重新配置Facet的Deployment Descriptor路径指向正确的web.xml。（2）BaseServlet方法分发：通过反射调用方法时，若method参数对应的实际方法返回类型为void，则不需要进行结果转发处理。修改BaseServlet的service方法，增加对void返回类型的判断。（3）商品图片上传：处理多部分表单数据时，需要正确区分普通表单字段和文件字段，通过判断Part.getSubmittedFileName()是否为空来区分。（4）订单状态流转：设计订单状态机时，需要在每个状态变更操作前验证当前状态是否符合变更条件，防止非法状态跳转。（5）购物车去重：同一用户对同一商品重复添加时，应更新数量而非插入新记录，通过在cart表中设置user_id+product_id的联合唯一索引实现。</p>
+
+<p><b>项目展望：</b>当前系统已实现基本的二手交易功能，未来可以进一步扩展以下功能：（1）引入在线即时通讯（WebSocket），支持买卖双方实时沟通；（2）增加商品评价与评分系统；（3）接入第三方支付接口（如微信支付、支付宝）；（4）增加消息通知机制，如订单状态变更通知；（5）引入Elasticsearch实现更强大的全文搜索功能。</p>
+
+<p>综上所述，本次实训让我对Java Web开发有了全面深入的理解，不仅提升了编程实践能力，也培养了分析问题、解决问题的工程思维。项目虽已基本完成核心功能，但仍有许多优化空间，今后将继续学习完善。</p>
+
+<div style="height:40pt;"></div>
+<h2>三、评分表</h2>
+<table>
+  <tr><th>评价项目</th><th>分值</th><th>得分</th></tr>
+  <tr><td>网站需求分析与数据库设计</td><td>20</td><td></td></tr>
+  <tr><td>网站模块详细设计</td><td>15</td><td></td></tr>
+  <tr><td>网站功能实现（界面与代码）</td><td>30</td><td></td></tr>
+  <tr><td>功能测试</td><td>10</td><td></td></tr>
+  <tr><td>实验总结</td><td>10</td><td></td></tr>
+  <tr><td>报告格式与排版</td><td>10</td><td></td></tr>
+  <tr><td>创新性与完整性</td><td>5</td><td></td></tr>
+  <tr><td><b>总分</b></td><td><b>100</b></td><td></td></tr>
+</table>
+
+</body>
+</html>

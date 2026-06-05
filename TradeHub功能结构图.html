@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeHub 功能结构图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  body {
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .header { text-align: center; padding: 16px 0 8px; }
+  .header h1 { font-size: 24px; color: #333; margin: 0; }
+  .header p { font-size: 13px; color: #888; margin: 4px 0 0; }
+  .chart-section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    padding: 20px;
+    overflow-x: auto;
+  }
+  .chart-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 12px;
+    padding-left: 10px;
+    border-left: 3px solid #FF5000;
+  }
+  .mermaid { display: flex; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>TradeHub 校园二手交易平台 - 功能结构图</h1>
+    <p>前台用户系统 &amp; 后台管理系统</p>
+  </div>
+
+  <!-- ================== 前台功能结构 ================== -->
+  <div class="chart-section">
+    <h2>一、前台用户系统</h2>
+    <div class="mermaid">
+graph TB
+    F0["🏠 TradeHub 前台用户系统"]
+
+    U["👤 用户模块"]
+    U --> U1["用户注册"]
+    U --> U2["用户登录"]
+    U --> U3["退出登录"]
+    U --> U4["个人信息管理"]
+    U --> U5["修改密码"]
+
+    H["🏠 首页展示"]
+    H --> H1["轮播广告图"]
+    H --> H2["商品分类导航"]
+    H --> H3["最新发布商品"]
+    H --> H4["热门推荐排行"]
+    H --> H5["全局导航栏"]
+
+    B["📋 商品浏览"]
+    B --> B1["商品列表（分页）"]
+    B --> B2["分类筛选"]
+    B --> B3["多维度排序"]
+    B --> B4["商品详情"]
+
+    S["🔍 搜索功能"]
+    S --> S1["关键词搜索"]
+    S --> S2["按分类筛选"]
+    S --> S3["按价格区间筛选"]
+    S --> S4["搜索结果分页"]
+
+    C["🛒 购物车"]
+    C --> C1["加入购物车"]
+    C --> C2["查看购物车"]
+    C --> C3["修改数量"]
+    C --> C4["删除商品"]
+    C --> C5["批量结算"]
+
+    O["📝 订单系统"]
+    O --> O1["提交订单"]
+    O --> O2["买家订单列表"]
+    O --> O3["卖家订单列表"]
+    O --> O4["付款操作"]
+    O --> O5["发货操作"]
+    O --> O6["确认收货"]
+    O --> O7["取消订单"]
+
+    P["❤️ 个人中心"]
+    P --> P1["我的商品管理"]
+    P --> P2["发布商品"]
+    P --> P3["编辑/删除商品"]
+    P --> P4["我的收藏"]
+    P --> P5["我的订单"]
+    P --> P6["个人设置"]
+
+    F0 --> U & H & B & S & C & O & P
+
+    style F0 fill:#FF5000,color:#fff,stroke:#FF5000,stroke-width:2px
+    style U fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    style H fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    style B fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    style S fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    style C fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    style O fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    style P fill:#fff0e6,stroke:#FF8C52,stroke-width:1.5px
+    </div>
+  </div>
+
+  <!-- ================== 后台功能结构 ================== -->
+  <div class="chart-section">
+    <h2>二、后台管理系统</h2>
+    <div class="mermaid">
+graph TB
+    A0["🔧 TradeHub 后台管理系统"]
+
+    D["📊 管理仪表盘"]
+    D --> D1["数据统计概览"]
+    D --> D2["各分类商品数量"]
+
+    UM["👥 用户管理"]
+    UM --> UM1["用户列表"]
+    UM --> UM2["封禁用户"]
+    UM --> UM3["解封用户"]
+    UM --> UM4["按用户名/学号搜索"]
+
+    PM["📦 商品管理"]
+    PM --> PM1["商品列表"]
+    PM --> PM2["下架商品"]
+    PM --> PM3["查看商品详情"]
+
+    CM["📂 分类管理"]
+    CM --> CM1["分类列表"]
+    CM --> CM2["添加分类"]
+    CM --> CM3["编辑分类"]
+    CM --> CM4["删除分类"]
+
+    CR["🎠 轮播图管理"]
+    CR --> CR1["轮播图列表"]
+    CR --> CR2["添加轮播图"]
+    CR --> CR3["编辑轮播图"]
+    CR --> CR4["删除轮播图"]
+    CR --> CR5["排序调整"]
+
+    PE["🛡️ 权限控制"]
+    PE --> PE1["管理员登录校验"]
+    PE --> PE2["AdminFilter 拦截"]
+    PE --> PE3["越权重定向"]
+
+    A0 --> D & UM & PM & CM & CR & PE
+
+    style A0 fill:#1890ff,color:#fff,stroke:#1890ff,stroke-width:2px
+    style D fill:#e6f0ff,stroke:#5BADFF,stroke-width:1.5px
+    style UM fill:#e6f0ff,stroke:#5BADFF,stroke-width:1.5px
+    style PM fill:#e6f0ff,stroke:#5BADFF,stroke-width:1.5px
+    style CM fill:#e6f0ff,stroke:#5BADFF,stroke-width:1.5px
+    style CR fill:#e6f0ff,stroke:#5BADFF,stroke-width:1.5px
+    style PE fill:#e6f0ff,stroke:#5BADFF,stroke-width:1.5px
+    </div>
+  </div>
+
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis', padding: 15 },
+    securityLevel: 'loose'
+  });
+</script>
+</body>
+</html>
