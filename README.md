@@ -457,8 +457,8 @@ copies or substantial portions of the Software.
 
 如有问题或建议，欢迎通过以下方式联系：
 
-- **Issues**: [GitHub Issues](https://github.com/your-username/TradeHub/issues)
-- **Email**: your-email@example.com
+- **Issues**: [GitHub Issues]((https://github.com/WangSuhang123/))
+- **Email**: wangsuhang7984@foxmail.com
 
 ---
 
