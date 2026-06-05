@@ -158,7 +158,7 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/your-username/TradeHub.git
+git clone https://github.com/WangSuhang123/TradeHub.git
 cd TradeHub
 ```
 
